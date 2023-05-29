@@ -60,7 +60,7 @@
 
         // 箱を作成
         var geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-        var material = new THREE.MeshPhongMaterial({ color: 12539180 });
+        var material = new THREE.MeshPhongMaterial({ color: 12539185 });
         var box = new THREE.Mesh(geometry, material);
         box.position.set(0,0.1,0); //位置を指定
         scene.add(box);   // シーンに追加
@@ -84,6 +84,14 @@
         u_cone.rotation.x = 0;
         u_cone.position.set(0,0.6,0);
         scene.add(u_cone);
+        
+        //円柱の作成
+        var miki_g = new THREE.CylinderGeometry( 0.25, 0.25, 1, 32 );
+        var material_miki = new THREE.MeshPhongMaterial({ color: 12539180 });
+        var miki = new THREE.Mesh( miki_g, material_miki);
+        miki.rotation.x = 0;
+        miki.position.set(0,0.3,0);
+        scene.add(miki);
         
         update();
 
