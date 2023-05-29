@@ -66,21 +66,21 @@
         //scene.add(box);   // シーンに追加
         
        //円錐上の作成
-        var beak_g = new THREE.ConeGeometry( 0.3, 0.5, 32 );
-        var material_beak = new THREE.MeshPhongMaterial({ color: 00640000 });
-        var beak = new THREE.Mesh( beak_g, material_beak);
-        beak.rotation.x = 0;
-        beak.position.set(0,1.2,0);
-        //scene.add(beak);
+        var cone_g = new THREE.ConeGeometry( 0.3, 0.5, 32 );
+        var material_cone = new THREE.MeshPhongMaterial({ color: 00640000 });
+        var o_cone = new THREE.Mesh( cone_g, material_cone);
+        o_cone.rotation.x = 0;
+        o_cone.position.set(0,1.2,0);
+        //scene.add(o_cone);
         
         //円錐中の作成
-        var c_cone = new THREE.Mesh( beak_g, material_beak);
+        var c_cone = new THREE.Mesh( cone_g, material_cone);
         c_cone.rotation.x = 0;
         c_cone.position.set(0,0.9,0);
         //scene.add(c_cone);
         
         //円錐下の作成
-        var u_cone = new THREE.Mesh( beak_g, material_beak);
+        var u_cone = new THREE.Mesh( cone_g, material_cone);
         u_cone.rotation.x = 0;
         u_cone.position.set(0,0.6,0);
         //scene.add(u_cone);
@@ -95,7 +95,7 @@
         
         const tree = new THREE.Group();
         tree.add(box);//箱
-        tree.add(beak);//円錐上
+        tree.add(o_cone);//円錐上
         tree.add(c_cone);//円錐中
         tree.add(u_cone);//円錐下
         tree.add(miki);//円柱
