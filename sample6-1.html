@@ -63,7 +63,7 @@
         var material = new THREE.MeshPhongMaterial({ color: 16175540 });
         var box = new THREE.Mesh(geometry, material);
         box.position.set(0,0.1,0); //位置を指定
-        scene.add(box);   // シーンに追加
+        //scene.add(box);   // シーンに追加
         
        //円錐上の作成
         var beak_g = new THREE.ConeGeometry( 0.3, 0.5, 32 );
@@ -71,19 +71,19 @@
         var beak = new THREE.Mesh( beak_g, material_beak);
         beak.rotation.x = 0;
         beak.position.set(0,1.2,0);
-        scene.add(beak);
+        //scene.add(beak);
         
         //円錐中の作成
         var c_cone = new THREE.Mesh( beak_g, material_beak);
         c_cone.rotation.x = 0;
         c_cone.position.set(0,0.9,0);
-        scene.add(c_cone);
+        s//cene.add(c_cone);
         
         //円錐下の作成
         var u_cone = new THREE.Mesh( beak_g, material_beak);
         u_cone.rotation.x = 0;
         u_cone.position.set(0,0.6,0);
-        scene.add(u_cone);
+        //scene.add(u_cone);
         
         //円柱の作成
         var miki_g = new THREE.CylinderGeometry( 0.05, 0.05, 0.5, 32 );
@@ -91,7 +91,22 @@
         var miki = new THREE.Mesh( miki_g, material_miki);
         miki.rotation.x = 0;
         miki.position.set(0,0.3,0);
-        scene.add(miki);
+        //scene.add(miki);
+        
+        const tree = new THREE.Group();
+        tree.add(box);//箱
+        tree.add(beak);//円錐上
+        tree.add(c_cone);//円錐中
+        tree.add(u_cone);//円錐下
+        tree.add(miki);//円柱
+        tree.position.set(0,1,0);
+        scene.add(tree);
+        
+        //全体のオブジェクト
+        const all = new THREE.Group();
+        all.add(tree); // 木を追加
+        all.position.set(0,0,0);//全体グループの原点の位置
+        scene.add(all); 
         
         update();
 
@@ -101,9 +116,9 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
           
-          // 箱を回転させる
-          box.rotation.x += 0.01;
-          box.rotation.y += 0.01;
+          // 全体を回転させる
+          all.rotation.x += 0.01;
+          all.rotation.y += 0.01;
 
 
         }
