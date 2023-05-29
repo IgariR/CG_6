@@ -59,7 +59,7 @@
         scene.add(axisHelper);
 
         // 箱を作成
-        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+        var geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(geometry, material);
         box.position.set(0,0,0); //位置を指定
@@ -70,19 +70,19 @@
         var material_beak = new THREE.MeshPhongMaterial({ color: 00640000 });
         var beak = new THREE.Mesh( beak_g, material_beak);
         beak.rotation.x = 0;
-        beak.position.set(0,1,0);
+        beak.position.set(0,1.2,0);
         scene.add(beak);
         
         //円錐中の作成
         var c_cone = new THREE.Mesh( beak_g, material_beak);
         c_cone.rotation.x = 0;
-        c_cone.position.set(0,0.7,0);
+        c_cone.position.set(0,0.9,0);
         scene.add(c_cone);
         
         //円錐下の作成
         var u_cone = new THREE.Mesh( beak_g, material_beak);
         u_cone.rotation.x = 0;
-        u_cone.position.set(0,0.4,0);
+        u_cone.position.set(0,0.6,0);
         scene.add(u_cone);
         
         update();
