@@ -55,7 +55,7 @@
         scene.add(box);   // シーンに追加
         
        //円錐の作成
-        var beak_g = new THREE.ConeGeometry( 1, 1, 32 );
+        var beak_g = new THREE.ConeGeometry( 1, 0.1, 32 );
         var material_beak = new THREE.MeshPhongMaterial({ color: 00640000 });
         var beak = new THREE.Mesh( beak_g, material_beak);
         beak.rotation.x = 1.5;
