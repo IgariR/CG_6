@@ -54,13 +54,7 @@
         box.position.set(0,0,0); //位置を指定
         scene.add(box);   // シーンに追加
         
-        //円錐
-        var under_g = new THREE.ConeGeometry( 1,1,1 );
-        var material_under = new THREE.MeshPhongMaterial({ color: 006400 });
-        var cone = new THREE.Mesh(under_g, material_under);
-        under.position.x = 1; //位置を指定
-        scene.add(cone);   // シーンに追加
-
+        
         update();
 
         // 毎フレーム時に実行されるループイベントです
