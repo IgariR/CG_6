@@ -96,10 +96,10 @@
         //scene.add(miki);
         
         //丸の作成
-        var decoration_g = new THREE.SphereGeometry(0.075,0.1,32);
+        var decoration_g = new THREE.SphereGeometry(0.075,32,32);
         var material_decoration = new THREE.MeshPhongMaterial({ color: 611234000 });
         var decoration = new THREE.Mesh( decoration_g, material_decoration);
-        decoration.position.set(0.2,0.7,0);
+        decoration.position.set(0.2,0.5,0);
         
         const tree = new THREE.Group();
         tree.add(box);//箱
