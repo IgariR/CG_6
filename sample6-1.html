@@ -40,6 +40,11 @@
         directionalLight2.position.set(-10, -10, 10);
         // シーンに追加
         scene.add(directionalLight2);
+        // 平行光源3
+        var directionalLight3 = new THREE.DirectionalLight(0x888888);
+        directionalLight3.position.set(-10, 10, 10);
+        // シーンに追加
+        scene.add(directionalLight3);
         
 
 
@@ -51,7 +56,7 @@
 
         // 箱を作成
         var geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-        var material = new THREE.MeshPhongMaterial({ color: 51123400 });
+        var material = new THREE.MeshPhongMaterial({ color: 91123400 });
         var box = new THREE.Mesh(geometry, material);
         box.position.set(0,0.1,0); //位置を指定
         scene.add(box);   // シーンに追加
