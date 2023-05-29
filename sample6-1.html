@@ -54,13 +54,12 @@
         box.position.set(0,0,0); //位置を指定
         scene.add(box);   // シーンに追加
         
-         //くちばしの作成
-        var beak_g = new THREE.ConeGeometry( 0.1, 0.5, 32 );
-        var material_beak = new THREE.MeshPhongMaterial({ color: 0xffff00 });
-        var beak = new THREE.Mesh( beak_g, material_beak);
-        beak.rotation.x = 1.5;
-        beak.position.set(0,1,0.6);
-        scene.add(beak);
+        //円錐
+        var under_g = new THREE.ConeGeometry( 5, 20, 32 );
+        var material_under = new THREE.MeshPhongMaterial({ color: 006400 });
+        var cone = new THREE.Mesh(under_g, material_under);
+        under.position.x = 1; //位置を指定
+        scene.add(cone);   // シーンに追加
 
         update();
 
