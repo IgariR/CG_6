@@ -104,7 +104,12 @@
         //丸2の作成
         var material2_decoration = new THREE.MeshPhongMaterial({ color: 45672348 });
         var decoration2 = new THREE.Mesh( decoration_g, material2_decoration);
-        decoration2.position.set(0.2,0.8,0);
+        decoration2.position.set(-0.2,0.8,0);
+        
+        //丸3の作成
+        var material3_decoration = new THREE.MeshPhongMaterial({ color: 75614200 });
+        var decoration3 = new THREE.Mesh( decoration_g, material3_decoration);
+        decoration3.position.set(-0.2,0.8,0.2);
         
         const tree = new THREE.Group();
         tree.add(box);//箱
@@ -114,6 +119,7 @@
         tree.add(miki);//円柱
         tree.add(decoration)//丸
         tree.add(decoration2)//丸2
+        tree.add(decoration3)//丸3
         tree.position.set(0,1,0);
         scene.add(tree);
         
